@@ -1,0 +1,2248 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/weisbrodt/ontologies/2025/0/untitled-ontology-4/"
+     xml:base="http://www.semanticweb.org/weisbrodt/ontologies/2025/0/untitled-ontology-4/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:MPPO="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:untitled-ontology-4="http://www.semanticweb.org/weisbrodt/ontologies/2025/0/untitled-ontology-4#">
+    <owl:Ontology rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl">
+        <terms:contributor>Fabian Weisbrodt</terms:contributor>
+        <terms:contributor>Jürgen Bock</terms:contributor>
+        <terms:license>https://creativecommons.org/licenses/by-sa/4.0/</terms:license>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/terms/contributor -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#computes -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#computes">
+        <rdfs:subPropertyOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#contains"/>
+        <owl:inverseOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isComputedBy"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ComputingDevice"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Parameter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#consumedby -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#consumedby">
+        <rdfs:subPropertyOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isInputOf"/>
+        <owl:inverseOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#consumes"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Material"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Machine"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#consumes -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#consumes">
+        <rdfs:subPropertyOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasInput"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Machine"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Material"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#contains -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#contains">
+        <owl:inverseOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isContainedIn"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ComputingDevice"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Parameter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#controls -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#controls">
+        <rdfs:subPropertyOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasConnectionWith"/>
+        <owl:inverseOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#getsControlledBy"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ComputingDevice"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Device"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#directlyMadeFrom -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#directlyMadeFrom">
+        <rdfs:subPropertyOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#madeFrom"/>
+        <owl:inverseOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#directlyMakes"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Material"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Material"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#directlyMakes -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#directlyMakes">
+        <rdfs:subPropertyOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#makes"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Material"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Material"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#display -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#display">
+        <rdfs:subPropertyOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#contains"/>
+        <owl:inverseOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isDisplayedBy"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ComputingDevice"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Parameter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#getsControlledBy -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#getsControlledBy">
+        <rdfs:subPropertyOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isConnectedTo"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Device"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ComputingDevice"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#givesInputTo -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#givesInputTo">
+        <rdfs:subPropertyOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isConnectedTo"/>
+        <owl:inverseOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#receivesInputFrom"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Device"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ComputingDevice"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasConnectionWith -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasConnectionWith">
+        <owl:inverseOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isConnectedTo"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ComputingDevice"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Device"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasDependingParameter -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasDependingParameter">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isDependingOn"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Parameter"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Parameter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasDirectContiniousParameter -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasDirectContiniousParameter">
+        <rdfs:subPropertyOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasParameter"/>
+        <owl:inverseOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isDirectContinousParameterOf"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Device"/>
+                    <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Material"/>
+                    <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ProcessStep"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ContinousParameter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasDirectStaticParameter -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasDirectStaticParameter">
+        <rdfs:subPropertyOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasStaticParameter"/>
+        <owl:inverseOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isDirectStaticParamterOf"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Device"/>
+                    <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Material"/>
+                    <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ProcessStep"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasDirectlyDependingParameter -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasDirectlyDependingParameter">
+        <rdfs:subPropertyOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasDependingParameter"/>
+        <owl:inverseOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isDirectlyDependingOn"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Parameter"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Parameter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasDirectlyInverseProportionalDependingParameter -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasDirectlyInverseProportionalDependingParameter">
+        <rdfs:subPropertyOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasDirectlyDependingParameter"/>
+        <rdfs:subPropertyOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasInverseProportionalDependingParameter"/>
+        <owl:inverseOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isDirectlyInverseProportionalDependingOn"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Parameter"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Parameter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasDirectlyProportionalDependingParamter -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasDirectlyProportionalDependingParamter">
+        <rdfs:subPropertyOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasDirectlyDependingParameter"/>
+        <rdfs:subPropertyOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasProportionalDependingParameter"/>
+        <owl:inverseOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isDirectlyProportionalDependingOn"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Parameter"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Parameter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasInput -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasInput">
+        <owl:inverseOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isInputOf"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Device"/>
+                    <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ProcessStep"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Device"/>
+                    <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Material"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#utilizes"/>
+            <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasInput"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasInputParameter -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasInputParameter">
+        <rdfs:subPropertyOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#contains"/>
+        <owl:inverseOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isInputParameterTo"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ComputingDevice"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Parameter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasInverseProportionalDependingParameter -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasInverseProportionalDependingParameter">
+        <rdfs:subPropertyOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasDependingParameter"/>
+        <owl:inverseOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isInverseProportionalDependingOn"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Parameter"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Parameter"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasInverseProportionalDependingParameter"/>
+            <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasProportionalDependingParameter"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasProportionalDependingParameter"/>
+            <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasInverseProportionalDependingParameter"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasMeasurementInterval -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasMeasurementInterval">
+        <owl:inverseOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isMeasurementIntervalOf"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ContinousParameter"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#MeasurementIntervall"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasOutput -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasOutput">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Device"/>
+                    <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ProcessStep"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Device"/>
+                    <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Material"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#utilizes"/>
+            <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasOutput"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasParameter -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasParameter">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Device"/>
+                    <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Material"/>
+                    <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ProcessStep"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Parameter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasPart -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasPart">
+        <owl:inverseOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isPartOf"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Machine"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#MachinePart"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasPredecessor -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasPredecessor">
+        <owl:inverseOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasSuccessor"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ProcessStep"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ProcessStep"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isSubprocessOf"/>
+            <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasPredecessor"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasProportionalDependingParameter -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasProportionalDependingParameter">
+        <rdfs:subPropertyOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasDependingParameter"/>
+        <owl:inverseOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isProportionalDependingOn"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Parameter"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Parameter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasSameDirectLevelPredecessor -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasSameDirectLevelPredecessor">
+        <rdfs:subPropertyOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasSameLevelPredecessor"/>
+        <owl:inverseOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasSameLevelDirectSuccessor"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ProcessStep"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ProcessStep"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasSameLevelDirectSuccessor -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasSameLevelDirectSuccessor">
+        <rdfs:subPropertyOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasSameLevelSuccesor"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ProcessStep"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ProcessStep"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasSameLevelPredecessor -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasSameLevelPredecessor">
+        <rdfs:subPropertyOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasPredecessor"/>
+        <owl:inverseOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasSameLevelSuccesor"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasSameLevelSuccesor -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasSameLevelSuccesor">
+        <rdfs:subPropertyOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasSuccessor"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ProcessStep"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ProcessStep"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasSensor -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasSensor">
+        <rdfs:subPropertyOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasPart"/>
+        <owl:inverseOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isSensorOf"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Machine"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Sensor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasStaticParameter -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasStaticParameter">
+        <rdfs:subPropertyOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasParameter"/>
+        <owl:inverseOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isStaticParameterOf"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Device"/>
+                    <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Material"/>
+                    <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ProcessStep"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#madeFrom"/>
+            <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasStaticParameter"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasSubprocess -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasSubprocess">
+        <owl:inverseOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isSubprocessOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ProcessStep"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ProcessStep"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasSuccessor -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasSuccessor">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ProcessStep"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ProcessStep"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isSubprocessOf"/>
+            <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasSuccessor"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isCalculatedWith -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isCalculatedWith">
+        <rdfs:subPropertyOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isDirectlyInverseProportionalDependingOn"/>
+        <owl:inverseOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#usedToCalculate"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Parameter"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Parameter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isComputedBy -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isComputedBy">
+        <rdfs:subPropertyOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isContainedIn"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Parameter"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ComputingDevice"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isConnectedTo -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isConnectedTo">
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Device"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isContainedIn -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isContainedIn">
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Parameter"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ComputingDevice"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isDependingOn -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isDependingOn">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Parameter"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Parameter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isDirectContinousParameterOf -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isDirectContinousParameterOf">
+        <rdfs:subPropertyOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isParamterOf"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ContinousParameter"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Device"/>
+                    <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Material"/>
+                    <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ProcessStep"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isDirectStaticParamterOf -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isDirectStaticParamterOf">
+        <rdfs:subPropertyOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isStaticParameterOf"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Device"/>
+                    <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Material"/>
+                    <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ProcessStep"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isDirectlyDependingOn -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isDirectlyDependingOn">
+        <rdfs:subPropertyOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isDependingOn"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Parameter"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Parameter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isDirectlyInverseProportionalDependingOn -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isDirectlyInverseProportionalDependingOn">
+        <rdfs:subPropertyOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isDirectlyDependingOn"/>
+        <rdfs:subPropertyOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isInverseProportionalDependingOn"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Parameter"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Parameter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isDirectlyProportionalDependingOn -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isDirectlyProportionalDependingOn">
+        <rdfs:subPropertyOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isDirectlyDependingOn"/>
+        <rdfs:subPropertyOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isProportionalDependingOn"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Parameter"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Parameter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isDisplayedBy -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isDisplayedBy">
+        <rdfs:subPropertyOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isContainedIn"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Parameter"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ComputingDevice"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isInputOf -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isInputOf">
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Material"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Device"/>
+                    <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ProcessStep"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isInputOf"/>
+            <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#usedDuring"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isInputParameterTo -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isInputParameterTo">
+        <rdfs:subPropertyOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isContainedIn"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Parameter"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ComputingDevice"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isInverseProportionalDependingOn -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isInverseProportionalDependingOn">
+        <rdfs:subPropertyOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isDependingOn"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Parameter"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Parameter"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isInverseProportionalDependingOn"/>
+            <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isProportionalDependingOn"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isProportionalDependingOn"/>
+            <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isInverseProportionalDependingOn"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isMeasurementIntervalOf -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isMeasurementIntervalOf">
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#MeasurementIntervall"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ContinousParameter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isOutputOf -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isOutputOf">
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Material"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Device"/>
+                    <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ProcessStep"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isOutputOf"/>
+            <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#usedDuring"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isParamterOf -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isParamterOf">
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Parameter"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Device"/>
+                    <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Material"/>
+                    <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ProcessStep"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isPartOf -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isPartOf">
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#MachinePart"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Machine"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isProportionalDependingOn -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isProportionalDependingOn">
+        <rdfs:subPropertyOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isDependingOn"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Parameter"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Parameter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isSensorOf -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isSensorOf">
+        <rdfs:subPropertyOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isPartOf"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Sensor"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Machine"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isStaticParameterOf -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isStaticParameterOf">
+        <rdfs:subPropertyOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isParamterOf"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Device"/>
+                    <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Material"/>
+                    <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ProcessStep"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#makes"/>
+            <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isStaticParameterOf"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isSubprocessOf -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isSubprocessOf"/>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#madeFrom -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#madeFrom">
+        <owl:inverseOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#makes"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Material"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Material"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#makes -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#makes">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Material"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Material"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#producedby -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#producedby">
+        <rdfs:subPropertyOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isOutputOf"/>
+        <owl:inverseOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#produces"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Machine"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Material"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#produces -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#produces">
+        <rdfs:subPropertyOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasOutput"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Device"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Material"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#receivesInputFrom -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#receivesInputFrom">
+        <rdfs:subPropertyOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasConnectionWith"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ComputingDevice"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Device"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#takenby -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#takenby">
+        <rdfs:subPropertyOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isInputOf"/>
+        <owl:inverseOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#takes"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Material"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Machine"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#takes -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#takes">
+        <rdfs:subPropertyOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasInput"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Machine"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Material"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#usedDuring -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#usedDuring">
+        <owl:inverseOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#utilizes"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Device"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ProcessStep"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#usedToCalculate -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#usedToCalculate">
+        <rdfs:subPropertyOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasDirectlyDependingParameter"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Parameter"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Parameter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#utilizes -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#utilizes">
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ProcessStep"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Device"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasSubprocess"/>
+            <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#utilizes"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#CentralComputingDevice -->
+
+    <owl:Class rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#CentralComputingDevice">
+        <rdfs:subClassOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ComputingDevice"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ComputingDevice -->
+
+    <owl:Class rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ComputingDevice">
+        <rdfs:subClassOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Device"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ContinousParameter -->
+
+    <owl:Class rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ContinousParameter">
+        <rdfs:subClassOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Parameter"/>
+        <rdfs:comment>Parameters that change during the manufacturing process</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Device -->
+
+    <owl:Class rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Device"/>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#FinalProduct -->
+
+    <owl:Class rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#FinalProduct">
+        <rdfs:subClassOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Material"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Input -->
+
+    <owl:Class rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Input">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isInputOf"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Device"/>
+                            <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ProcessStep"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#IntermediateProduct -->
+
+    <owl:Class rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#IntermediateProduct">
+        <rdfs:subClassOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Material"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Machine -->
+
+    <owl:Class rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Machine">
+        <rdfs:subClassOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Device"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#MachinePart -->
+
+    <owl:Class rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#MachinePart">
+        <rdfs:subClassOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Device"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Material -->
+
+    <owl:Class rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Material"/>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#MeasurementIntervall -->
+
+    <owl:Class rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#MeasurementIntervall"/>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Output -->
+
+    <owl:Class rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Output">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isOutputOf"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Device"/>
+                            <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ProcessStep"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Parameter -->
+
+    <owl:Class rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Parameter"/>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ProcessStep -->
+
+    <owl:Class rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ProcessStep"/>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RawMaterial -->
+
+    <owl:Class rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RawMaterial">
+        <rdfs:subClassOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Material"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Sensor -->
+
+    <owl:Class rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Sensor">
+        <rdfs:subClassOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#MachinePart"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter -->
+
+    <owl:Class rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter">
+        <rdfs:subClassOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Parameter"/>
+        <rdfs:comment>Parameter that stay the same throughout the whole production process</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#AktuellAbfließendesKondensat -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#AktuellAbfließendesKondensat">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ContinousParameter"/>
+        <MPPO:isDirectContinousParameterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Autoklav"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#AktuelleHärtephase -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#AktuelleHärtephase">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ContinousParameter"/>
+        <MPPO:isDirectContinousParameterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Autoklavierung"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#AktuelleMengeErzeugtenFrischdampf -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#AktuelleMengeErzeugtenFrischdampf">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ContinousParameter"/>
+        <MPPO:isDirectContinousParameterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Dampferzeuger"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#AktuelleScheiteltemperatur -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#AktuelleScheiteltemperatur">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ContinousParameter"/>
+        <MPPO:isDirectContinousParameterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Autoklav"/>
+        <MPPO:isInputParameterTo rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Autoklavensteuerung"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#AktuelleSohlentemperatur -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#AktuelleSohlentemperatur">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ContinousParameter"/>
+        <MPPO:isDirectContinousParameterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Autoklav"/>
+        <MPPO:isInputParameterTo rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Autoklavensteuerung"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#AktuellerDruck -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#AktuellerDruck">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ContinousParameter"/>
+        <MPPO:isDirectContinousParameterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Autoklav"/>
+        <MPPO:isInputParameterTo rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Autoklavensteuerung"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#AktuellerGasverbrauch -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#AktuellerGasverbrauch">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ContinousParameter"/>
+        <MPPO:isDirectContinousParameterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Dampferzeuger"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#AktuellerZuflussFrischdampf -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#AktuellerZuflussFrischdampf">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ContinousParameter"/>
+        <MPPO:isDirectContinousParameterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Frischdampf"/>
+        <MPPO:isDirectlyDependingOn rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#AktuelleHärtephase"/>
+        <MPPO:isDirectlyDependingOn rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#AktuelleScheiteltemperatur"/>
+        <MPPO:isDirectlyDependingOn rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#AktuelleSohlentemperatur"/>
+        <MPPO:isDirectlyDependingOn rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#AktuellerDruck"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#AktuellerZuflussWiederverwendeterDampf -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#AktuellerZuflussWiederverwendeterDampf">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ContinousParameter"/>
+        <MPPO:isDirectContinousParameterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#DampfWiederverwendet"/>
+        <MPPO:isDirectlyDependingOn rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#DruckdifferenzSpenderEmpfänger"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#AktuellerÖffnungswinkel -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#AktuellerÖffnungswinkel">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ContinousParameter"/>
+        <MPPO:isComputedBy rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Autoklavensteuerung"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#VentilDampfüberleitung"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#VentilFrischdampf"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#AktuellerÖlverbrauch -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#AktuellerÖlverbrauch">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ContinousParameter"/>
+        <MPPO:isDirectContinousParameterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Dampferzeuger"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Autoklav -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Autoklav">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Machine"/>
+        <MPPO:usedDuring rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Autoklavierung"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#AutoklavenBefüllen -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#AutoklavenBefüllen">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ProcessStep"/>
+        <MPPO:isSubprocessOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Härten"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#AutoklavenEntladen -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#AutoklavenEntladen">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ProcessStep"/>
+        <MPPO:hasSameDirectLevelPredecessor rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Autoklavierung"/>
+        <MPPO:isSubprocessOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Härten"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Autoklavensteuerung -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Autoklavensteuerung">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ComputingDevice"/>
+        <MPPO:controls rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#VentilDampfüberleitung"/>
+        <MPPO:controls rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#VentilFrischdampf"/>
+        <MPPO:receivesInputFrom rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ManometerAutoklav"/>
+        <MPPO:receivesInputFrom rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ThermometerAutoklav"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Autoklavierung -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Autoklavierung">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ProcessStep"/>
+        <MPPO:hasSameDirectLevelPredecessor rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#AutoklavenBefüllen"/>
+        <MPPO:isSubprocessOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Härten"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#BeladungAutoklav -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#BeladungAutoklav">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Autoklav"/>
+        <MPPO:isDirectlyDependingOn rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#BeladungHärtewagen"/>
+        <MPPO:isDisplayedBy rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ZentraleWerksabbildung"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#BeladungHärtewagen -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#BeladungHärtewagen">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#HärtewagenBeladen"/>
+        <MPPO:isDisplayedBy rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ZentraleWerksabbildung"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Beladungsstrategie -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Beladungsstrategie">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Autoklav"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#DampfWiederverwendet -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#DampfWiederverwendet">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#IntermediateProduct"/>
+        <MPPO:consumedby rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Autoklav"/>
+        <MPPO:isOutputOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Autoklav"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Dampferzeuger -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Dampferzeuger">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Machine"/>
+        <MPPO:usedDuring rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Autoklavierung"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#DampfüberleitungsSystem -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#DampfüberleitungsSystem">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Device"/>
+        <MPPO:usedDuring rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Autoklavierung"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#DruckdifferenzSpenderEmpfänger -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#DruckdifferenzSpenderEmpfänger">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ContinousParameter"/>
+        <MPPO:isCalculatedWith rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#AktuellerDruck"/>
+        <MPPO:isDirectContinousParameterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Autoklav"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Druckfestigkeit -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Druckfestigkeit">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#KalksandsteinUnverpackt"/>
+        <MPPO:isDirectlyDependingOn rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#IstBarhWert"/>
+        <MPPO:isDirectlyDependingOn rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#IstHärtedauer"/>
+        <MPPO:isDirectlyDependingOn rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#IstHärtekurve"/>
+        <MPPO:isDirectlyDependingOn rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Sandkörnung"/>
+        <MPPO:isDirectlyProportionalDependingOn rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#KalkProTonne"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#EmissionenAutoklavierung -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#EmissionenAutoklavierung">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <MPPO:isDirectlyProportionalDependingOn rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#GesamterFosilerRohstoffVerbrauch"/>
+        <MPPO:isStaticParameterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Autoklavierung"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#FormWerkzeuge -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#FormWerkzeuge">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#MachinePart"/>
+        <MPPO:isPartOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Presse"/>
+        <MPPO:usedDuring rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RohlingePressen"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Frischdampf -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Frischdampf">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#IntermediateProduct"/>
+        <MPPO:consumedby rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Autoklav"/>
+        <MPPO:producedby rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Dampferzeuger"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Gas -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Gas">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RawMaterial"/>
+        <MPPO:consumedby rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Dampferzeuger"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#GesamteMengeVerwendeterFrischdampf -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#GesamteMengeVerwendeterFrischdampf">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Frischdampf"/>
+        <MPPO:isDirectlyDependingOn rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RelativeAusgefüllteInnenvolumen"/>
+        <MPPO:isDirectlyDependingOn rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#TemperaturStartAutoklavierung"/>
+        <MPPO:isDirectlyDependingOn rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Werkstemperatur"/>
+        <MPPO:isDirectlyInverseProportionalDependingOn rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#GesamteMengeWiederverwendeterDampf"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#GesamteMengeWiederverwendeterDampf -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#GesamteMengeWiederverwendeterDampf">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#DampfWiederverwendet"/>
+        <MPPO:isDirectlyProportionalDependingOn rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#DruckdifferenzSpenderEmpfänger"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#GesamterFosilerRohstoffVerbrauch -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#GesamterFosilerRohstoffVerbrauch">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Autoklavierung"/>
+        <MPPO:isDirectlyProportionalDependingOn rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#GesamteMengeVerwendeterFrischdampf"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#GesamterGasverbrauch -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#GesamterGasverbrauch">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Autoklavierung"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#GesamterMengeVerwendetesDestilliertesWasser -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#GesamterMengeVerwendetesDestilliertesWasser">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#WasserDestilliert"/>
+        <MPPO:isDirectlyDependingOn rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#GesamteMengeVerwendeterFrischdampf"/>
+        <MPPO:isDirectlyProportionalDependingOn rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#DruckdifferenzSpenderEmpfänger"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#GesamterÖlverbrauch -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#GesamterÖlverbrauch">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Autoklavierung"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#GesamtesAbgeflossenesKondensat -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#GesamtesAbgeflossenesKondensat">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Autoklavierung"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Greifroboter -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Greifroboter">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Machine"/>
+        <MPPO:usedDuring rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#HärtewagenBeladen"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Greiftakt -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Greiftakt">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Greifroboter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#HärtekurveSoll -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#HärtekurveSoll">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Rohlinge"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Härten -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Härten">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ProcessStep"/>
+        <MPPO:hasSameDirectLevelPredecessor rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Pressen"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Härtewagen -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Härtewagen">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Device"/>
+        <MPPO:usedDuring rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#AutoklavenBefüllen"/>
+        <MPPO:usedDuring rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#AutoklavenEntladen"/>
+        <MPPO:usedDuring rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#HärtewagenBeladen"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#HärtewagenBeladen -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#HärtewagenBeladen">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ProcessStep"/>
+        <MPPO:hasSameDirectLevelPredecessor rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RohlingePressen"/>
+        <MPPO:isSubprocessOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Pressen"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Innenvolumen -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Innenvolumen">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Autoklav"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#IstBarhWert -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#IstBarhWert">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <MPPO:isCalculatedWith rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#AktuellerDruck"/>
+        <MPPO:isCalculatedWith rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#MessIntervalAktuellerDruck"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Autoklavierung"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#IstHärtedauer -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#IstHärtedauer">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Autoklavierung"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#IstHärtekurve -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#IstHärtekurve">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <MPPO:isCalculatedWith rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#AktuelleHärtephase"/>
+        <MPPO:isCalculatedWith rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#AktuelleScheiteltemperatur"/>
+        <MPPO:isCalculatedWith rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#AktuelleSohlentemperatur"/>
+        <MPPO:isCalculatedWith rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#AktuellerDruck"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Autoklavierung"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#IstLochstein -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#IstLochstein">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Rohlinge"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Kalk -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Kalk">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RawMaterial"/>
+        <MPPO:takenby rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Mischer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#KalkProTonne -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#KalkProTonne">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RohmasseNachMischen"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#KalksandsteinUnverpackt -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#KalksandsteinUnverpackt">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#IntermediateProduct"/>
+        <MPPO:directlyMadeFrom rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RohlingeGeladen"/>
+        <MPPO:producedby rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Autoklav"/>
+        <MPPO:takenby rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Verpackungsanlage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#KalksandsteinVerpackt -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#KalksandsteinVerpackt">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#FinalProduct"/>
+        <MPPO:directlyMadeFrom rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#KalksandsteinUnverpackt"/>
+        <MPPO:producedby rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Verpackungsanlage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Kalksorte -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Kalksorte">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Kalk"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Kennzeichnung -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Kennzeichnung">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Parameter"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Rohlinge"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Körnung -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Körnung">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Sand"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#MAxErreichteTemperatur -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#MAxErreichteTemperatur">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Autoklavierung"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ManometerAutoklav -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ManometerAutoklav">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Sensor"/>
+        <MPPO:isPartOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Autoklav"/>
+        <MPPO:usedDuring rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Autoklavierung"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#MaxErlaubterDruckabfall -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#MaxErlaubterDruckabfall">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Rohlinge"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#MaxErlaubterDruckanstieg -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#MaxErlaubterDruckanstieg">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Rohlinge"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#MaxErreichterDruck -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#MaxErreichterDruck">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Autoklavierung"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#MaxLeistungDampferzeuger -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#MaxLeistungDampferzeuger">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Dampferzeuger"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Maße -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Maße">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#FormWerkzeuge"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Rohlinge"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#MessIntervalAktuellerDruck -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#MessIntervalAktuellerDruck">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#MeasurementIntervall"/>
+        <MPPO:isMeasurementIntervalOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#AktuellerDruck"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#MessIntervalTemperatur -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#MessIntervalTemperatur">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#MeasurementIntervall"/>
+        <MPPO:isMeasurementIntervalOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#AktuelleScheiteltemperatur"/>
+        <MPPO:isMeasurementIntervalOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#AktuelleSohlentemperatur"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#MessIntervalÖffnungswinkel -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#MessIntervalÖffnungswinkel">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#MeasurementIntervall"/>
+        <MPPO:isMeasurementIntervalOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#AktuellerÖffnungswinkel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Mischen -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Mischen">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ProcessStep"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Mischer -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Mischer">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Machine"/>
+        <MPPO:usedDuring rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Mischen"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Nachmischen -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Nachmischen">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ProcessStep"/>
+        <MPPO:isSubprocessOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Pressen"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Nachmischer -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Nachmischer">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Machine"/>
+        <MPPO:usedDuring rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Nachmischen"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Presse -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Presse">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Machine"/>
+        <MPPO:usedDuring rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RohlingePressen"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Pressen -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Pressen">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ProcessStep"/>
+        <MPPO:hasSameDirectLevelPredecessor rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Reagieren"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#PressfeuchteNachMischen -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#PressfeuchteNachMischen">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RohmasseNachMischen"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#PressfeuchteNachNachmischen -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#PressfeuchteNachNachmischen">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RohmasseNachNachmischen"/>
+        <MPPO:isDirectlyDependingOn rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#PressfeuchteNachReagieren"/>
+        <MPPO:isDirectlyDependingOn rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#WasserProTonneNachmischer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#PressfeuchteNachReagieren -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#PressfeuchteNachReagieren">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RohmasseNachReagieren"/>
+        <MPPO:isDirectlyDependingOn rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#PressfeuchteNachMischen"/>
+        <MPPO:isDirectlyDependingOn rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Reaktionszeit"/>
+        <MPPO:isDirectlyDependingOn rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Werkstemperatur"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Presstakt -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Presstakt">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Presse"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Reagieren -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Reagieren">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ProcessStep"/>
+        <MPPO:hasSameDirectLevelPredecessor rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Mischen"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Reaktionszeit -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Reaktionszeit">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RohmasseNachReagieren"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Reaktor -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Reaktor">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Machine"/>
+        <MPPO:usedDuring rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Reagieren"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RelativeAusgefüllteInnenvolumen -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RelativeAusgefüllteInnenvolumen">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <MPPO:isCalculatedWith rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#BeladungAutoklav"/>
+        <MPPO:isCalculatedWith rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Innenvolumen"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Autoklavierung"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RezepturSoll -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RezepturSoll">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RohmasseNachMischen"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RohdichteNachMischen -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RohdichteNachMischen">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RohmasseNachMischen"/>
+        <MPPO:isDirectlyDependingOn rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#KalkProTonne"/>
+        <MPPO:isDirectlyDependingOn rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#PressfeuchteNachMischen"/>
+        <MPPO:isDirectlyDependingOn rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#SandProTonne"/>
+        <MPPO:isDirectlyDependingOn rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ZuschlagstoffeProTonne"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RohdichteNachNachmischen -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RohdichteNachNachmischen">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RohmasseNachNachmischen"/>
+        <MPPO:isDirectlyDependingOn rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#PressfeuchteNachNachmischen"/>
+        <MPPO:isDirectlyDependingOn rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RohdichteNachReagieren"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RohdichteNachReagieren -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RohdichteNachReagieren">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RohmasseNachReagieren"/>
+        <MPPO:isDirectlyDependingOn rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#PressfeuchteNachReagieren"/>
+        <MPPO:isDirectlyDependingOn rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RohdichteNachMischen"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RohdichteRohlinge -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RohdichteRohlinge">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Rohlinge"/>
+        <MPPO:isDirectlyDependingOn rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RohdichteNachNachmischen"/>
+        <MPPO:isDirectlyDependingOn rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#TemperaturNachNachmischen"/>
+        <MPPO:isDirectlyDependingOn rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ZeitBisPressen"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Rohlinge -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Rohlinge">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#IntermediateProduct"/>
+        <MPPO:directlyMadeFrom rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RohmasseNachNachmischen"/>
+        <MPPO:isInputOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#HärtewagenBeladen"/>
+        <MPPO:producedby rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Presse"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RohlingeGeladen -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RohlingeGeladen">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#IntermediateProduct"/>
+        <MPPO:directlyMadeFrom rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Rohlinge"/>
+        <MPPO:isOutputOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#HärtewagenBeladen"/>
+        <MPPO:takenby rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Autoklav"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RohlingePressen -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RohlingePressen">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ProcessStep"/>
+        <MPPO:hasSameDirectLevelPredecessor rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Nachmischen"/>
+        <MPPO:isSubprocessOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Pressen"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RohmasseNachMischen -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RohmasseNachMischen">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#IntermediateProduct"/>
+        <MPPO:directlyMadeFrom rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Kalk"/>
+        <MPPO:directlyMadeFrom rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Sand"/>
+        <MPPO:directlyMadeFrom rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Wasser"/>
+        <MPPO:directlyMadeFrom rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Zuschlagstoffe"/>
+        <MPPO:producedby rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Mischer"/>
+        <MPPO:takenby rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Reaktor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RohmasseNachNachmischen -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RohmasseNachNachmischen">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#IntermediateProduct"/>
+        <MPPO:directlyMadeFrom rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RohmasseNachReagieren"/>
+        <MPPO:directlyMadeFrom rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Wasser"/>
+        <MPPO:producedby rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Nachmischer"/>
+        <MPPO:takenby rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Presse"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RohmasseNachReagieren -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RohmasseNachReagieren">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#IntermediateProduct"/>
+        <MPPO:directlyMadeFrom rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RohmasseNachMischen"/>
+        <MPPO:producedby rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Reaktor"/>
+        <MPPO:takenby rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Nachmischer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Sand -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Sand">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RawMaterial"/>
+        <MPPO:takenby rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Mischer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#SandProTonne -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#SandProTonne">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RohmasseNachMischen"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Sandkörnung -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Sandkörnung">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Sand"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Stapelbild -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Stapelbild">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Greifroboter"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RohlingeGeladen"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StillstandzeitSeitLetztenHärteprozess -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StillstandzeitSeitLetztenHärteprozess">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Autoklav"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#TemperaturAußenhülle -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#TemperaturAußenhülle">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ContinousParameter"/>
+        <MPPO:isDirectContinousParameterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Autoklav"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#TemperaturEinfahrenInAutoklav -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#TemperaturEinfahrenInAutoklav">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RohlingeGeladen"/>
+        <MPPO:isDirectlyDependingOn rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#TemperaturNachNachmischen"/>
+        <MPPO:isDirectlyDependingOn rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Werkstemperatur"/>
+        <MPPO:isDirectlyDependingOn rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ZeitBisEinfahrenAutoklav"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#TemperaturNachNachmischen -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#TemperaturNachNachmischen">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RohmasseNachNachmischen"/>
+        <MPPO:isDirectlyDependingOn rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#TemperaturNachReagieren"/>
+        <MPPO:isDirectlyDependingOn rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#WasserProTonneNachmischer"/>
+        <MPPO:isDirectlyDependingOn rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#WassertemperaturNachmischer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#TemperaturNachPressen -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#TemperaturNachPressen">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Rohlinge"/>
+        <MPPO:isDirectlyDependingOn rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#TemperaturNachNachmischen"/>
+        <MPPO:isDirectlyDependingOn rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ZeitBisPressen"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#TemperaturNachReagieren -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#TemperaturNachReagieren">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RohmasseNachReagieren"/>
+        <MPPO:isDirectlyDependingOn rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Reaktionszeit"/>
+        <MPPO:isDirectlyDependingOn rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Werkstemperatur"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#TemperaturStartAutoklavierung -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#TemperaturStartAutoklavierung">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RohlingeGeladen"/>
+        <MPPO:isDirectlyDependingOn rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#TemperaturEinfahrenInAutoklav"/>
+        <MPPO:isDirectlyDependingOn rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ZeitBisStartAutoklavierung"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ThermometerAutoklav -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ThermometerAutoklav">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Sensor"/>
+        <MPPO:isPartOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Autoklav"/>
+        <MPPO:usedDuring rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Autoklavierung"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#VentilDampfüberleitung -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#VentilDampfüberleitung">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#MachinePart"/>
+        <MPPO:isPartOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#DampfüberleitungsSystem"/>
+        <MPPO:usedDuring rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Autoklavierung"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#VentilFrischdampf -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#VentilFrischdampf">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#MachinePart"/>
+        <MPPO:isPartOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#DampfüberleitungsSystem"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Verpacken -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Verpacken">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ProcessStep"/>
+        <MPPO:hasSameDirectLevelPredecessor rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Härten"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Verpackungsanlage -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Verpackungsanlage">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Machine"/>
+        <MPPO:usedDuring rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Verpacken"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Verpackungsmaterial -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Verpackungsmaterial">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Material"/>
+        <MPPO:takenby rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Verpackungsanlage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Verschiebebühne -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Verschiebebühne">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Device"/>
+        <MPPO:usedDuring rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#AutoklavenBefüllen"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#WaageMischer -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#WaageMischer">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Sensor"/>
+        <MPPO:isPartOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Mischer"/>
+        <MPPO:usedDuring rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Mischen"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#WaageNachmischer -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#WaageNachmischer">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Sensor"/>
+        <MPPO:isPartOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Nachmischer"/>
+        <MPPO:usedDuring rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Nachmischen"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Wasser -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Wasser">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RawMaterial"/>
+        <MPPO:takenby rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Mischer"/>
+        <MPPO:takenby rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Nachmischer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#WasserDestilliert -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#WasserDestilliert">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RawMaterial"/>
+        <MPPO:takenby rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Dampferzeuger"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#WasserProTonneNachmischer -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#WasserProTonneNachmischer">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Wasser"/>
+        <MPPO:isDirectlyDependingOn rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#PressfeuchteNachReagieren"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#WassertemperaturNachmischer -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#WassertemperaturNachmischer">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Parameter"/>
+        <MPPO:isStaticParameterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Wasser"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Werkstemperatur -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Werkstemperatur">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ZeitBisEinfahrenAutoklav -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ZeitBisEinfahrenAutoklav">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RohlingeGeladen"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ZeitBisPressen -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ZeitBisPressen">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RohmasseNachNachmischen"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ZeitBisStartAutoklavierung -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ZeitBisStartAutoklavierung">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RohlingeGeladen"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ZentraleWerksabbildung -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ZentraleWerksabbildung">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#CentralComputingDevice"/>
+        <MPPO:hasConnectionWith rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Greifroboter"/>
+        <MPPO:hasConnectionWith rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Presse"/>
+        <MPPO:hasConnectionWith rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Verschiebebühne"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Zuschlagstoffe -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Zuschlagstoffe">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RawMaterial"/>
+        <MPPO:takenby rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Mischer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ZuschlagstoffeProTonne -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ZuschlagstoffeProTonne">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#StaticParameter"/>
+        <MPPO:isDirectStaticParamterOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RohmasseNachMischen"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Öl -->
+
+    <owl:NamedIndividual rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Öl">
+        <rdf:type rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#RawMaterial"/>
+        <MPPO:consumedby rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Dampferzeuger"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
