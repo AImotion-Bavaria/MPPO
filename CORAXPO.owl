@@ -1,0 +1,685 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/ghatak/ontologies/2026/4/untitled-ontology-7/"
+     xml:base="http://www.semanticweb.org/ghatak/ontologies/2026/4/untitled-ontology-7/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:terms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl">
+        <owl:versionIRI rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl/1.0.0"/>
+        <owl:imports rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl"/>
+        <terms:contributor>Sagnik Ghatak</terms:contributor>
+        <terms:title>CORAX Parameter Ontology</terms:title>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#canBePerformedBy -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#canBePerformedBy">
+        <owl:inverseOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#canPerform"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#RobotTask"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Machine"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#canPerform -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#canPerform">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Machine"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#RobotTask"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#hasCapability"/>
+            <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#enables"/>
+        </owl:propertyChainAxiom>
+        <rdfs:comment xml:lang="en">Inferred via the chain hasCapability o enables. Lets a task planner ask: which robots in the SE-Model can perform task T?</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#enables -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#enables">
+        <owl:inverseOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#requiresCapability"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#Capability"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#RobotTask"/>
+        <rdfs:comment xml:lang="en">A capability enables a robot task type. Combined with hasCapability, this lets the planner derive which robots can perform a given task via the canPerform property chain.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#executesCommand -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#executesCommand">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#isExecutedBy"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Machine"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#RobotCommand"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#hasApproachPose -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#hasApproachPose">
+        <rdfs:subPropertyOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#hasPose"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#RobotTask"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#Pose"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#hasPose"/>
+        </owl:propertyChainAxiom>
+        <rdfs:comment xml:lang="en">A safe pose above or near the pick/place pose used to avoid collisions when entering or leaving the operating area</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#hasCapability -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#hasCapability">
+        <owl:inverseOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#isCapabilityOf"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Machine"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#Capability"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#hasEndEffector -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#hasEndEffector">
+        <rdfs:subPropertyOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#hasPart"/>
+        <owl:inverseOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#isEndEffectorOf"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#Robot"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#hasPickPose -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#hasPickPose">
+        <rdfs:subPropertyOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#hasPose"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#RobotTask"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#Pose"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#hasPose"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#hasPlacePose -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#hasPlacePose">
+        <rdfs:subPropertyOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#hasPose"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#RobotTask"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#Pose"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#hasPose"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#hasPose -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#hasPose">
+        <owl:inverseOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#isPoseOf"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#EndEffector"/>
+                    <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#Robot"/>
+                    <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#RobotTask"/>
+                    <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#WorkspaceObject"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#Pose"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#hasSourceObject -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#hasSourceObject">
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#RobotTask"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#WorkspaceObject"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#hasTargetObject -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#hasTargetObject">
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#RobotTask"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#WorkspaceObject"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#hasTargetPose -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#hasTargetPose">
+        <rdfs:subPropertyOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#hasPose"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#MotionCommand"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#Pose"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#hasPose"/>
+        </owl:propertyChainAxiom>
+        <rdfs:comment xml:lang="en">The Cartesian pose targeted by a motion command.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#hosts -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#hosts">
+        <owl:inverseOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#isHostedOn"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#Server"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#SoftwareModule"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#isCapabilityOf -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#isCapabilityOf">
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#Capability"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Machine"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#isEndEffectorOf -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#isEndEffectorOf">
+        <rdfs:subPropertyOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isPartOf"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#EndEffector"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#Robot"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#isExecutedBy -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#isExecutedBy">
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#RobotCommand"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Machine"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#isHostedOn -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#isHostedOn">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#SoftwareModule"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#Server"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#isPoseOf -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#isPoseOf">
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#Pose"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#locatedIn -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#locatedIn">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#Robot"/>
+                    <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#WorkspaceObject"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#Workspace"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#mountedOn -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#mountedOn">
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#StationaryGripper"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#Workspace"/>
+        <rdfs:comment xml:lang="en">A stationary gripper (e.g., Schunk EGI 80 attached to the bench) is mounted on a fixed structure rather than a robot flange.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#realizesTask -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#realizesTask">
+        <rdfs:subPropertyOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#isSubprocessOf"/>
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#RobotCommand"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#RobotTask"/>
+        <rdfs:comment xml:lang="en">A low-level command realizes a high-level task. Sub-property of mppo:isSubprocessOf so the existing predecessor/successor inference applies to ordered command sequences.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#requiresCapability -->
+
+    <owl:ObjectProperty rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#requiresCapability">
+        <rdfs:domain rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#RobotTask"/>
+        <rdfs:range rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#Capability"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topDataProperty -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topDataProperty">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#Capability -->
+
+    <owl:Class rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#Capability">
+        <rdfs:comment xml:lang="en">An ability of a machine. Used by the task planner to match tasks to machines via the canPerform property chain.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#Client -->
+
+    <owl:Class rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#Client">
+        <rdfs:subClassOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ComputingDevice"/>
+        <rdfs:comment xml:lang="en">A controller that receives commands from the server</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#CollaborativeRobot -->
+
+    <owl:Class rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#CollaborativeRobot">
+        <rdfs:subClassOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#Robot"/>
+        <owl:disjointWith rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#MobileRobot"/>
+        <rdfs:comment xml:lang="en">Robot certified for shared workspace operation with humans and other robots</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#EGIGripCommand -->
+
+    <owl:Class rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#EGIGripCommand">
+        <rdfs:subClassOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#EGIGripperCommand"/>
+        <owl:disjointWith rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#EGIReleaseCommand"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#EGIGripperCommand -->
+
+    <owl:Class rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#EGIGripperCommand">
+        <rdfs:subClassOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#RobotCommand"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#EGIReleaseCommand -->
+
+    <owl:Class rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#EGIReleaseCommand">
+        <rdfs:subClassOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#EGIGripperCommand"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#EndEffector -->
+
+    <owl:Class rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#EndEffector">
+        <rdfs:subClassOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#MachinePart"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#GraspingCapability -->
+
+    <owl:Class rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#GraspingCapability">
+        <rdfs:subClassOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#RobotCapability"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#Gripper -->
+
+    <owl:Class rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#Gripper">
+        <rdfs:subClassOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#EndEffector"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#GripperCloseCommand -->
+
+    <owl:Class rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#GripperCloseCommand">
+        <rdfs:subClassOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#GripperCommand"/>
+        <owl:disjointWith rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#GripperOpenCommand"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#GripperCommand -->
+
+    <owl:Class rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#GripperCommand">
+        <rdfs:subClassOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#RobotCommand"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#GripperOpenCommand -->
+
+    <owl:Class rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#GripperOpenCommand">
+        <rdfs:subClassOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#GripperCommand"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#InspectionTask -->
+
+    <owl:Class rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#InspectionTask">
+        <rdfs:subClassOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#RobotTask"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#LinearCommand -->
+
+    <owl:Class rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#LinearCommand">
+        <rdfs:subClassOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#MotionCommand"/>
+        <owl:disjointWith rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#PTPCommand"/>
+        <rdfs:comment xml:lang="en">Cartesian linear motion (LIN). Maps to &quot;command&quot;: &quot;LIN&quot; in the controller protocol.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#MobileRobot -->
+
+    <owl:Class rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#MobileRobot">
+        <rdfs:subClassOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#Robot"/>
+        <rdfs:comment xml:lang="en">Reserved for future extension</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#MotionCapability -->
+
+    <owl:Class rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#MotionCapability">
+        <rdfs:subClassOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#RobotCapability"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#MotionCommand -->
+
+    <owl:Class rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#MotionCommand">
+        <rdfs:subClassOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#RobotCommand"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#NavigationTask -->
+
+    <owl:Class rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#NavigationTask">
+        <rdfs:subClassOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#RobotTask"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#PTPCommand -->
+
+    <owl:Class rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#PTPCommand">
+        <rdfs:subClassOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#MotionCommand"/>
+        <rdfs:comment xml:lang="en">Point-to-point joint-space motion. Maps to &quot;command&quot;: &quot;PTP&quot; in the controller protocol.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#PickAndPlaceCapability -->
+
+    <owl:Class rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#PickAndPlaceCapability">
+        <rdfs:subClassOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#RobotCapability"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#PickAndPlaceTask -->
+
+    <owl:Class rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#PickAndPlaceTask">
+        <rdfs:subClassOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#RobotTask"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#PickTask -->
+
+    <owl:Class rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#PickTask">
+        <rdfs:subClassOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#RobotTask"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#PlaceTask -->
+
+    <owl:Class rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#PlaceTask">
+        <rdfs:subClassOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#RobotTask"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#Pose -->
+
+    <owl:Class rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#Pose"/>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#Robot -->
+
+    <owl:Class rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#Robot">
+        <rdfs:subClassOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#Machine"/>
+        <rdfs:comment xml:lang="en">Programmable, reprogrammable client. Every Robot must have at least one RobotCapability.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#RobotCapability -->
+
+    <owl:Class rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#RobotCapability">
+        <rdfs:subClassOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#Capability"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#RobotCommand -->
+
+    <owl:Class rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#RobotCommand">
+        <rdfs:subClassOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ProcessStep"/>
+        <owl:disjointWith rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#RobotTask"/>
+        <rdfs:comment xml:lang="en">A low-level, executable instruction sent from the server to a client controller.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#RobotMountedGripper -->
+
+    <owl:Class rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#RobotMountedGripper">
+        <rdfs:subClassOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#Gripper"/>
+        <owl:disjointWith rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#StationaryGripper"/>
+        <rdfs:comment xml:lang="en">A gripper mounted on the flange of a robot (e.g., the gripper on the KUKA iiwa)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#RobotTask -->
+
+    <owl:Class rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#RobotTask">
+        <rdfs:subClassOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ProcessStep"/>
+        <rdfs:comment xml:lang="en">A high-level, symbolic task to be performed by a robot. Tasks are realized by sequences of low-level RobotCommands via mppo:hasSubprocess / realizesTask.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#RoboticArm -->
+
+    <owl:Class rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#RoboticArm">
+        <rdfs:subClassOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#Robot"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#SensingCapability -->
+
+    <owl:Class rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#SensingCapability">
+        <rdfs:subClassOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#RobotCapability"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#Server -->
+
+    <owl:Class rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#Server">
+        <rdfs:subClassOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#ComputingDevice"/>
+        <rdfs:comment xml:lang="en">The central node hosting the SE-Model and software modules.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#SoftwareModule -->
+
+    <owl:Class rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#SoftwareModule">
+        <rdfs:comment xml:lang="en">A logical software component running on a Server. Distinct from mppo:Device because a SoftwareModule is not a physical artefact.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#StationaryGripper -->
+
+    <owl:Class rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#StationaryGripper">
+        <rdfs:subClassOf rdf:resource="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#Gripper"/>
+        <rdfs:comment xml:lang="en">A fixed gripper mounted on a workbench or fixture (e.g., the Schunk EGI 80 attached to the bench).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#Workspace -->
+
+    <owl:Class rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#Workspace">
+        <rdfs:comment xml:lang="en">A bounded physical region in which robots operate</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#WorkspaceObject -->
+
+    <owl:Class rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#WorkspaceObject">
+        <rdfs:comment xml:lang="en">A manipulable object in the workspace (block, fixture, tool, workpiece). Distinct from mppo:Material because workspace objects are not necessarily production materials. A WorkspaceObject can be assigned the type mppo:Material in addition where appropriate.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#incompatibleWith">
+        <rdfs:comment xml:lang="en">An ability of a machine. Used by the task planner to match tasks to machines via the canPerform property chain.</rdfs:comment>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#Client"/>
+            <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#Server"/>
+            <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/MPPO.owl#CentralComputingDevice"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#EGIGripperCommand"/>
+            <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#GripperCommand"/>
+            <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#MotionCommand"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#GraspingCapability"/>
+            <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#MotionCapability"/>
+            <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#PickAndPlaceCapability"/>
+            <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#SensingCapability"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#InspectionTask"/>
+            <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#NavigationTask"/>
+            <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#PickAndPlaceTask"/>
+            <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#PickTask"/>
+            <rdf:Description rdf:about="https://www.thi.de/forschung/aimotion/ontologies/CORAXPO.owl#PlaceTask"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
